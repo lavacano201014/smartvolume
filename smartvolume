@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+# vim: ft=python :
+
+import importlib
+import os
+
+# Decorators
+class __ArgumentFunction():
+    def __init__(self, f, name, descr, args):
+        self.f = f
+        self.name = name
+        self.descr = descr
+        self.args = args
+
+    def __call__(self, *args)
+        self.f(*args)
+
+class ArgumentFunction()
+    def __init__(self, name, descr, args):
+        self.name = name
+        self.descr = descr
+        self.args = args
+
+    def __call__(self, f)
+        return __ArgumentFunction(f, self.name, self.descr, self.args)

@@ -1,0 +1,13 @@
+# Global configuration file for smartvolume
+# You can copy this and any other configuration file to ~/.config/smartvolume if necessary
+# You can also create a local version and only change the relevant lines.
+
+# Load the following volume modules (separated by spaces), and run them in order shown, stopping after first success
+# e.g. with "mpdpy alsa", smartvolume will consider itself "done" and exit if mpdpy decides to run, and is successful
+# (in this case, if mpd is playing), and if mpdpy doesn't alter volume for whatever reason, alsa will run next.
+# you can use "smartvolume list vol" to get a list of all modules and their descriptions
+modules = 
+
+# The percentage of volume to adjust by
+# 3%, 5% and 10% are sane values, though it will take anything from 1-100
+volume = 5
