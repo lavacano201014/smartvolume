@@ -78,6 +78,14 @@ def should_adjust_volume():
 # the conversion. Here's the formula: your_program_max*amount/100
 def adjust_volume(direction, volume):
     if direction == "+":
-        change_your_volume("up", amount)
+        success = change_your_volume("up", amount)
     elif direction == "-":
-        change_your_volume("down", amount)
+        success = change_your_volume("down", amount)
+
+    # You need to return either True or False depending on whether you were successful in adjusting volume.
+    # If you return False, smartvolume will attempt to adjust the volume with the next module.
+    # If you don't return anything, smartvolume will assume False, and you'll get yelled at by your users.
+    if success:
+        return True
+    else:
+        return False
