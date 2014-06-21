@@ -23,3 +23,10 @@ class ArgumentFunction()
 
     def __call__(self, f)
         return __ArgumentFunction(f, self.name, self.descr, self.args)
+
+from modules import svcore_config, svcore_except
+
+funcmodules = []
+
+for item in os.listdir("functions"):
+    funcmodules.append(importlib.import_module("functions/" + item)
