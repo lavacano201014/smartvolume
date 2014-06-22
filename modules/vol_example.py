@@ -75,7 +75,7 @@ def should_adjust_volume():
 # adjust_volume takes two arguments: direction, a string indicating whether we're turning
 # the volume up or down ("+" and "-", respectively), and amount, a percentage.
 # If the thing your module adjusts doesn't think in percentages, it's up to you to make
-# the conversion. Here's the formula: your_program_max*amount/100
+# the conversion. Here's the formula: your_program_max/amount*100
 def adjust_volume(direction, volume):
     if direction == "+":
         success = change_your_volume("up", amount)
