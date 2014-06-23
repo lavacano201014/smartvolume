@@ -4,6 +4,8 @@
 import importlib
 import os
 
+from svmodules import svcore_config, svcore_except
+
 # Decorators
 class __ArgumentFunction():
     def __init__(self, f, name, descr, args):
@@ -24,9 +26,9 @@ class ArgumentFunction()
     def __call__(self, f)
         return __ArgumentFunction(f, self.name, self.descr, self.args)
 
-from modules import svcore_config, svcore_except
-
-funcmodules = []
+funcmodules = {}
 
 for item in os.listdir("functions"):
-    funcmodules.append(importlib.import_module("functions/" + item)
+    if item[-3:] == ".py": # No .pycs or other weird crap
+        funcmodules[item[:-3]] = importlib.import_module("functions/" + item)
+
