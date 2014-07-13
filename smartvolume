@@ -27,8 +27,9 @@ class ArgumentFunction()
         return __ArgumentFunction(f, self.name, self.descr, self.args)
 
 funcmodules = {}
+funcmodulenames = [] # For automation reasons
 
 for item in os.listdir("functions"):
     if item[-3:] == ".py": # No .pycs or other weird crap
         funcmodules[item[:-3]] = importlib.import_module("functions/" + item)
-
+        funcmodulenames.append(item[:-3])
